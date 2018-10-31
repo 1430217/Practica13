@@ -1,10 +1,14 @@
-<!DOCTYPE html>
+<?php
+  $mvc = new MvcController();
+  session_start();
+?>
 
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Starter</title>
+  <title>Practica 13 | Sistema de jugadores</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="views/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="views/bower_components/font-awesome/css/font-awesome.min.css">
@@ -22,7 +26,7 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.php" class="logo">
+    <a href="index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -59,7 +63,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="index.php?action=salir" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -88,22 +92,44 @@
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">NAVEGACIÖN</li>
-
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <?php
+          if(isset($_SESSION['sesion'])){
+        ?>
 
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+          <a href="#"><i class="fa fa-link"></i> <span>Equipos</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
+            <li><a href="index.php?action=addEquipo">Aregar equipo</a></li>
+            <li><a href="index.php?action=equipos">Ver equipos</a></li>
           </ul>
         </li>
+        
+        <li class="treeview">
+          <a href="#"><i class="fa fa-link"></i> <span>Jugadores</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="index.php?action=addJugador">Aregar jugador</a></li>
+            <li><a href="index.php?action=jugadores">Ver equipos</a></li>
+          </ul>
+        </li>
+
+        <?php
+          }else{
+        ?>
+
+        <li class="active"><a href="index.php?action=login"><i class="fa fa-link"></i> <span>Login</span></a></li>
+        <li class="active"><a href="index.php?action=registrar"><i class="fa fa-link"></i> <span>Registrar</span></a></li>
+
+        <?php } ?>
+
+        
 
       </ul>
     </section>
@@ -113,6 +139,7 @@
     <section class="content container-fluid">
 
       <?php
+        
         $mvc -> enlacesPaginasController();
       ?>
 
