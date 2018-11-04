@@ -116,7 +116,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="index.php?action=addJugador">Aregar jugador</a></li>
-            <li><a href="index.php?action=jugadores">Ver equipos</a></li>
+            <li><a href="index.php?action=jugadores">Ver jugadores</a></li>
           </ul>
         </li>
 

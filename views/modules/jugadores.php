@@ -25,11 +25,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!--< ?php
+                    <?php
                         $mvc = new MvcController();
-                        $mvc->getEquiposController();
-                        $mvc->deleteEquipoController();
-                    ?>-->
+                        $mvc->getJugadores();
+                        $mvc->deleteJugadorController();
+                    ?>
                 </tbody>
               </table>
             </div>

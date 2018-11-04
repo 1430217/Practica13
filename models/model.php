@@ -3,7 +3,8 @@ class EnlacesPagina{
 
     public function enlacesPaginasModel($enlaces){
         if($enlaces == 'login' || $enlaces == 'registrar' || $enlaces == 'dashboard' || $enlaces == 'salir' || $enlaces == 'addEquipo'
-            || $enlaces == 'equipos' || $enlaces == 'addJugador' || $enlaces == 'editarEquipo' ||$enlaces == 'jugadores'){
+            || $enlaces == 'equipos' || $enlaces == 'addJugador' || $enlaces == 'editarEquipo' ||$enlaces == 'jugadores'
+            || $enlaces == 'editarJugador'){
                 $module = 'views/modules/'.$enlaces.'.php';            
         }
 

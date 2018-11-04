@@ -5,7 +5,7 @@
 
 
 <div class="page-header">
-  <h1>Dashboard <small>En esta pagina se podrá administrar la cantidad los libros.</small></h1>
+  <h1>Dashboard <small>En esta pagina se podrá administrar los juagdores y equipo</small></h1>
 </div>
 
 <div class="row">
